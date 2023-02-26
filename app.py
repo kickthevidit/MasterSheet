@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 from markupsafe import escape
 
 from backend.createsheet import create_sheet
+from backend.createPDF import generate_pdf
 
 app = Flask(__name__)
 openai.api_key = ("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")
@@ -30,7 +31,9 @@ def get_file():
                 return_data.write(fo.read())
             return_data.seek(0)
             os.remove(filename)
-            return create_sheet(return_data)
+            contents = create_sheet(return_data)
+            dest = app.config['UPLOAD_FOLDER'] + "mastersheet"
+            generate_pdf(contents, dest).save()
     abort(400)
 
 @app.route("/download")

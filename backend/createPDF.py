@@ -3,15 +3,15 @@ from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
 
-def generate_txt(contents):
-    with open("txt_output.txt", "w") as fo:
-        fo.write(contents)
+def get_contents(filename):
+    with open(filename, 'r') as f:
+        txt = f.read().splitlines()
+        return txt
 
-def generate_pdf(txt_file_path, pdf_file_path): # returns a pdf file
+def generate_pdf(text, pdf_file_path): # returns a pdf file
     pdfmetrics.registerFont(TTFont('SF', 'sf.ttf'))
     c = canvas.Canvas(pdf_file_path, pagesize=letter)
-    with open(txt_file_path, 'r') as f:
-        txt = f.read().splitlines()
+    txt = text
     c.setFont("SF", 12)
     c.setFillColorRGB(0, 0, 0)
     y = 750
@@ -24,14 +24,9 @@ def generate_pdf(txt_file_path, pdf_file_path): # returns a pdf file
     return c
         
 ### TESTING ###
-# import convertpdf as cpdf
-# def main():
-#     file = open("./tests/Calculus.pdf", "rb")
-#     print("Started parsing...")
-#     text = cpdf.parse_pdf(file)
-#     generate_txt(text)
-#     print("Write to txt successful")
-#     generate_pdf("txt_output.txt", "pdf_output.pdf").save()
-#     print("Write to pdf successful")
-    
-# main()
+import convertpdf as cpdf
+def main():
+    contents = get_contents("test.txt")
+    generate_pdf(contents, "pdf_output.pdf").save()
+
+main()
