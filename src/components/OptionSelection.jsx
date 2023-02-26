@@ -3,7 +3,7 @@ import React from "react";
 export default function OptionSelection({ arrayItems, selectOption }) {
   return (
     <>
-      <h1 className="heading">ChatGPT Clone</h1>
+      <h1 className="heading">Master Sheet</h1>
 
       <div className="grid-main">
         {arrayItems.map((item) => {
