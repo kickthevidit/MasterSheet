@@ -13,7 +13,6 @@ UPLOAD_FOLDER = "tmp"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config['UPLOAD_EXTENSIONS'] = ['.pdf']
 
-
 @app.route("/", methods = ["GET", "POST"])
 def get_file():
     print(openai.api_key)
@@ -26,15 +25,12 @@ def get_file():
             if ext not in app.config['UPLOAD_EXTENSIONS']:
                 abort(400)
             f.save(filename)
-
             return_data = io.BytesIO()
             with open(filename, 'rb') as fo:
                 return_data.write(fo.read())
             return_data.seek(0)
             os.remove(filename)
-
             return create_sheet(return_data)
-        
     abort(400)
 
 @app.route("/download")
@@ -45,9 +41,7 @@ def download():
     with open(filename, 'rb') as fo:
         return_data.write(fo.read())
     return_data.seek(0)
-
     os.remove(filename)
-
     return send_file(return_data, mimetype="application/pdf", 
                      download_name='mastersheet.pdf', as_attachment=True)
 
@@ -57,8 +51,6 @@ def upload():
         data = str(request.data)
     else:
         data = "This is a test"
-
     with open(app.config['UPLOAD_FOLDER'] + "mastersheet", "w") as fo:
         fo.write(data)
-
     return redirect(url_for('download'))

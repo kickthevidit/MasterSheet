@@ -17,12 +17,8 @@ def create_sheet(file):
                 temperature=1.0,
                 max_tokens=1000)
             )
-    
+        
     text = ""
     for response in responses:
-        text = text + response.choices[0].text
-
+        text += response.choices[0].text
     return text
-
-
-

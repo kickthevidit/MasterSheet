@@ -1,6 +1,5 @@
 import io
 import pdfminer
-
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
@@ -27,13 +26,10 @@ def split_contents(contents):
     content_arr = []
     tokens = 0
     content = ""
-
     sections = 1
     length = len(contents)
-
     while length / sections >= 5000:
-        sections = sections + 1
-    
+        sections += 1
     for c in contents:
         if tokens >= length / sections:
             content_arr.append(content)
@@ -45,5 +41,3 @@ def split_contents(contents):
     
     content_arr.append(content)
     return content_arr
-
-
