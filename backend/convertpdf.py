@@ -8,7 +8,6 @@ from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfdocument import PDFDocument
 
-
 def parse_pdf(pdf_file):
     parser = PDFParser(pdf_file)
     document = PDFDocument(parser)
