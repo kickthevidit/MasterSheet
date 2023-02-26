@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FileDownload from './FileDownload';
 import FileInput from './FileInput';
 
 
@@ -35,23 +36,23 @@ export default function FileUpload() {
 	return (
 		<>
 			<div>
-				{/* <input type="file" name="file" onChange={changeHandler} /> */}
 				<FileInput onChange={changeHandler} />
 				{isSelected ? (
 					<div>
-						<p>Filename: {selectedFile.name}</p>
-						<p>Filetype: {selectedFile.type}</p>
-						<p>Size in bytes: {selectedFile.size}</p>
+						<p>File Name: {selectedFile.name}</p>
+						<p>File Type: {selectedFile.type}</p>
+						<p>Size in Bytes: {selectedFile.size}</p>
 						<p>
-							lastModifiedDate:{' '}
+							Date Last Modified:{' '}
 							{selectedFile.lastModifiedDate.toLocaleDateString()}
 						</p>
 					</div>
 				) : (
-					<p>Select a file to show details</p>
+					<p></p>
 				)}
 				<div>
-					<button onClick={handleSubmission}>Generate Cheat Sheet</button>
+					<FileDownload />
+					{/* <button onClick={handleSubmission}>Generate Cheat Sheet</button> */}
 				</div>
 			</div>
 		</>

@@ -1,5 +1,5 @@
 import "./App.css";
-import mainLogo from '/Users/Chris/Desktop/mastersheet/src/Paper.svg';
+import mainLogo from './assets/Paper.svg';
 import { Configuration, OpenAIApi } from "openai";
 import FileUpload from "./components/FileUpload";
 import OptionSelection from "./components/OptionSelection";
@@ -31,14 +31,14 @@ function App() {
   return (
     <>
       <div className="header-container">
-        <img src={mainLogo} alt="React Image" style={{ width: '8%', height: '8%' }}/>
+        <img src={mainLogo} alt="React Image" style={{ width: '8%', height: '8%' }} />
         <div className="heading" >
           <h1>Master Sheet</h1>
           <h4>Let Us Do The Busy Work</h4>
         </div>
       </div>
       <div className="App">
-        <FileUpload/>
+        <FileUpload />
       </div>
       <div></div>
     </>
