@@ -3,11 +3,10 @@ import FileDownload from './FileDownload';
 import DoubleBubble from './DoubleBubble';
 import FileInput from './FileInput';
 
-// const Bounce  = styled.div `animation: 2s ${keyframes`${bounce}`} infinite`;
-
 export default function FileUpload() {
 	const [selectedFile, setSelectedFile] = useState();
-	const [isSelected, setIsSelected] = useState(false);;
+	const [isSelected, setIsSelected] = useState(false);
+	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const changeHandler = (event) => {
 		setSelectedFile(event.target.files[0]);
@@ -15,8 +14,8 @@ export default function FileUpload() {
 	};
 
 	const handleSubmission = () => {
+		setIsSubmitting(true);
 		const formData = new FormData();
-
 		formData.append('file', selectedFile);
 
 
@@ -33,6 +32,9 @@ export default function FileUpload() {
 			})
 			.catch((error) => {
 				console.error('Error:', error);
+			})
+			.finally(() => {
+				setIsSubmitting(false);
 			});
 	};
 
@@ -54,9 +56,8 @@ export default function FileUpload() {
 					<p></p>
 				)}
 				<div>
+					{isSubmitting && <DoubleBubble />}
 					<FileDownload onClick={handleSubmission} />
-					{/* <button onClick={handleSubmission}>Generate Cheat Sheet</button> */}
-					<DoubleBubble/>
 				</div>
 			</div>
 		</>
