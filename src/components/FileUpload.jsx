@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import FileDownload from './FileDownload';
+import DoubleBubble from './DoubleBubble';
 import FileInput from './FileInput';
 
+// const Bounce  = styled.div `animation: 2s ${keyframes`${bounce}`} infinite`;
 
 export default function FileUpload() {
 	const [selectedFile, setSelectedFile] = useState();
@@ -53,6 +55,7 @@ export default function FileUpload() {
 				<div>
 					<FileDownload />
 					{/* <button onClick={handleSubmission}>Generate Cheat Sheet</button> */}
+					<DoubleBubble/>
 				</div>
 			</div>
 		</>
