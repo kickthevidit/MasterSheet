@@ -8,6 +8,7 @@ from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfdocument import PDFDocument
 
+
 def parse_pdf(pdf_file):
     parser = PDFParser(pdf_file)
     document = PDFDocument(parser)
@@ -42,6 +43,8 @@ def split_contents(contents):
         else:
             content += c
             tokens += 1
+    
+    content_arr.append(content)
     return content_arr
 
 

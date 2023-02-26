@@ -7,7 +7,7 @@ from markupsafe import escape
 from backend.createsheet import create_sheet
 
 app = Flask(__name__)
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = ("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")
 
 UPLOAD_FOLDER = "tmp"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
@@ -16,6 +16,7 @@ app.config['UPLOAD_EXTENSIONS'] = ['.pdf']
 
 @app.route("/", methods = ["GET", "POST"])
 def get_file():
+    print(openai.api_key)
     if request.method == "POST":
         f = request.files['file']
         filename = secure_filename(f.filename)
