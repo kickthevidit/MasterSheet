@@ -7,7 +7,7 @@ from markupsafe import escape
 from backend.createsheet import create_sheet
 
 app = Flask(__name__)
-openai.api_key = ("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")
+openai.api_key = ("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")
 
 UPLOAD_FOLDER = "tmp"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER

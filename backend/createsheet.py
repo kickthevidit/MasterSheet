@@ -4,13 +4,10 @@ from .convertpdf import *
 from .summarizer import *
 
 def create_sheet(file):
-    print("here")
     contents = parse_pdf(file)
     sections = split_contents(contents)
 
     responses = []
-
-    print(len(sections))
 
     for section in sections:
         responses.append(
@@ -21,7 +18,11 @@ def create_sheet(file):
                 max_tokens=1000)
             )
     
-    return responses
+    text = ""
+    for response in responses:
+        text = text + response.choices[0].text
+
+    return text
 
 
 
