@@ -24,9 +24,9 @@ def generate_pdf(text, pdf_file_path): # returns a pdf file
     return c
         
 ### TESTING ###
-# import convertpdf as cpdf
-# def main():
-#     contents = get_contents("test.txt")
-#     generate_pdf(contents, "./testpdf_output.pdf").save()
+import convertpdf as cpdf
+def main():
+    contents = get_contents("test.txt")
+    generate_pdf(contents, "./testpdf_output.pdf").save()
 
-# main()
+main()
