@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap");
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.header-container {
+  display: inline;
+  align-items: center;
+}
+
+.header-container img {
+  margin-right: 10px; 
+}
+
+.App {
+  margin: 20px auto 0;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.heading {
+  font-family: Copperplate;
+  width: 300px;
+  border: 5px solid black;
+  padding: 10px;
+  margin: 20px auto 0;
+  text-align: center;
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+
+.grid-main {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.grid-child {
+  border: 2px solid whitesmoke;
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.grid-child:hover {
+  background-color: whitesmoke;
+  color: #212121;
+}
+
+.grid-child h3 {
+  font-family: Poppins;
+  font-weight: 700;
+}
+
+.grid-child p {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.text-area {
+  font-size: 20px;
+  padding: 10px;
+  font-family: Poppins;
+}
+
+.action-btn {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.result-text {
+  font-family: Poppins;
+  font-size: 25px;
+  line-height: 2.5rem;
+}
