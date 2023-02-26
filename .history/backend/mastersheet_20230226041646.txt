@@ -1,0 +1,44 @@
+01/18/23
+
+Math 412
+
+HW1
+
+Due Wednesday, January 25, 2023
+
+Solve four of the next five problems. Answers without proofs do not count.
+
+1. # 1.1.20 in the book.
+
+2. Consider the following four families of simple graphs: A = {complete graphs}, B =
+{cycles}, C = {graphs whose complement has exactly two edges}, D = {graphs with exactly
+six edges}. For each pair of these families, determine∗ all graphs that belong to both families
+in the pair.
+
+3. How many independent sets of size 4 has the Petersen graph?
+
+(Hint: Count to how many independent sets of size 4 belongs a given vertex in the Petersen
+graph.)
+
+4. Determine∗ all simple graphs G for which the adjacency matrix of G equals the
+
+incidence matrix of G (with an appropriate ordering of vertices and edges).
+
+5. For n ≥ 4 and every of the three properties below, describe all n-vertex simple graphs
+
+G satisfying this property:
+(a) every induced subgraph H with 3 vertices of G is isomorphic to the path P3 with two
+edges;
+(b) every path contained in G is an induced subgraph of G;
+(c) every induced subgraph of G with 3 vertices has either 2 or 0 edges.
+
+——————————————————
+∗ The word ”determine” means that you need to prove all your claims.
+——————————————————
+Problems below review basic concepts and their ideas could be used in the tests/quizzes.
+WARMUP PROBLEMS: Section 1.1: # 2, 4, 5, 7, 9. Do not write these up!
+OTHER INTERESTING PROBLEMS: Section 1.1: # 13, 18, 19, 21, 22, 24, 26, 29, 37.
+
+Do not write these up!
+
+
