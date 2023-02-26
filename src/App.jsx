@@ -20,6 +20,8 @@ function App() {
     setOption(option);
   };
 
+
+
   const doStuff = async () => {
     let object = { ...option, prompt: input };
 
