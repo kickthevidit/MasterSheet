@@ -4,7 +4,7 @@ from flask import Flask, redirect, render_template, request, url_for, abort, sen
 from werkzeug.utils import secure_filename
 from markupsafe import escape
 
-from backend import convertpdf, summarizer
+from backend.createsheet import create_sheet
 
 app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -31,7 +31,8 @@ def get_file():
                 return_data.write(fo.read())
             return_data.seek(0)
             os.remove(filename)
-            return convertpdf.parse_pdf(return_data)
+
+            return create_sheet(return_data)
         
     abort(400)
 
