@@ -1,4 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import FileInput from './FileInput';
+
 
 export default function FileUpload() {
 	const [selectedFile, setSelectedFile] = useState();
@@ -30,27 +32,28 @@ export default function FileUpload() {
 			});
 	};
 
-	return(
-        <>
-        <div>
-			<input type="file" name="file" onChange={changeHandler} />
-			{isSelected ? (
-				<div>
-					<p>Filename: {selectedFile.name}</p>
-					<p>Filetype: {selectedFile.type}</p>
-					<p>Size in bytes: {selectedFile.size}</p>
-					<p>
-						lastModifiedDate:{' '}
-						{selectedFile.lastModifiedDate.toLocaleDateString()}
-					</p>
-				</div>
-			) : (
-				<p>Select a file to show details</p>
-			)}
+	return (
+		<>
 			<div>
-				<button onClick={handleSubmission}>Submit</button>
+				{/* <input type="file" name="file" onChange={changeHandler} /> */}
+				<FileInput onChange={changeHandler} />
+				{isSelected ? (
+					<div>
+						<p>Filename: {selectedFile.name}</p>
+						<p>Filetype: {selectedFile.type}</p>
+						<p>Size in bytes: {selectedFile.size}</p>
+						<p>
+							lastModifiedDate:{' '}
+							{selectedFile.lastModifiedDate.toLocaleDateString()}
+						</p>
+					</div>
+				) : (
+					<p>Select a file to show details</p>
+				)}
+				<div>
+					<button onClick={handleSubmission}>Generate Cheat Sheet</button>
+				</div>
 			</div>
-		</div>
-        </>
+		</>
 	);
 }

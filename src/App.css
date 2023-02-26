@@ -7,8 +7,33 @@
   text-align: center;
 }
 
+.header-container {
+  display: inline;
+  align-items: center;
+}
+
+.header-container img {
+  margin-right: 10px; 
+}
+
+.App {
+  margin: 20px auto 0;
+}
+
+h1 {
+  font-size: 40px;
+}
+
 .heading {
-  font-family: Poppins;
+  font-family: Copperplate;
+  width: 300px;
+  border: 5px solid black;
+  padding: 10px;
+  margin: 20px auto 0;
+  text-align: center;
+  text-align: center;
+  background-color: white;
+  color: black;
 }
 
 .grid-main {

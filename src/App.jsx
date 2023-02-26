@@ -1,4 +1,5 @@
 import "./App.css";
+import mainLogo from '/Users/Chris/Desktop/mastersheet/src/Paper.svg';
 import { Configuration, OpenAIApi } from "openai";
 import FileUpload from "./components/FileUpload";
 import OptionSelection from "./components/OptionSelection";
@@ -29,16 +30,17 @@ function App() {
 
   return (
     <>
-      <h1 className="heading">Master Sheet</h1>
+      <div className="header-container">
+        <img src={mainLogo} alt="React Image" style={{ width: '8%', height: '8%' }}/>
+        <div className="heading" >
+          <h1>Master Sheet</h1>
+          <h4>Let Us Do The Busy Work</h4>
+        </div>
+      </div>
       <div className="App">
         <FileUpload/>
-        <h1 className="heading">Test</h1>
-        {/* {Object.values(option).length === 0 ? (
-          <OptionSelection arrayItems={arrayItems} selectOption={selectOption} />
-        ) : (
-          <Translation doStuff={doStuff} setInput={setInput} result={result} />
-        )} */}
       </div>
+      <div></div>
     </>
   );
 }
