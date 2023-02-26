@@ -31,6 +31,7 @@ def get_file():
                 return_data.write(fo.read())
             return_data.seek(0)
             os.remove(filename)
+
             return convertpdf.parse_pdf(return_data)
         
     abort(400)

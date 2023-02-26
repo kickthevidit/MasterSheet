@@ -1,5 +1,9 @@
+import re
 import io
+import pytesseract
+import cv2
 import pdfminer
+import PyPDF2
 
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
@@ -37,3 +41,12 @@ def split_contents(contents):
             content += c
             tokens += 1
     return content_arr
+
+def main():
+    filename = "./tests/ottoman.pdf"
+    parsed = parse_pdf(filename)
+    print(parsed)
+    chunks = split_contents(parsed)
+    print(chunks[1])
+
+main()
