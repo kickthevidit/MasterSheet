@@ -1,8 +1,9 @@
 import "./App.css";
 import { Configuration, OpenAIApi } from "openai";
+import FileUpload from "./components/FileUpload";
 import OptionSelection from "./components/OptionSelection";
 import Translation from "./components/Translation";
-import { arrayItems } from "./AIOptions";
+//import { arrayItems } from "./AIOptions";
 import { useState } from "react";
 
 function App() {
@@ -27,13 +28,18 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {Object.values(option).length === 0 ? (
-        <OptionSelection arrayItems={arrayItems} selectOption={selectOption} />
-      ) : (
-        <Translation doStuff={doStuff} setInput={setInput} result={result} />
-      )}
-    </div>
+    <>
+      <h1 className="heading">Master Sheet</h1>
+      <div className="App">
+        <FileUpload/>
+        <h1 className="heading">Test</h1>
+        {/* {Object.values(option).length === 0 ? (
+          <OptionSelection arrayItems={arrayItems} selectOption={selectOption} />
+        ) : (
+          <Translation doStuff={doStuff} setInput={setInput} result={result} />
+        )} */}
+      </div>
+    </>
   );
 }
 
