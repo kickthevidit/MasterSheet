@@ -15,10 +15,11 @@ export default function FileUpload() {
 	const handleSubmission = () => {
 		const formData = new FormData();
 
-		formData.append('File', selectedFile);
+		formData.append('file', selectedFile);
+
 
 		fetch(
-			'https://freeimage.host/api/1/upload?key=<YOUR_API_KEY>',
+			'/upload',
 			{
 				method: 'POST',
 				body: formData,
@@ -51,7 +52,7 @@ export default function FileUpload() {
 					<p></p>
 				)}
 				<div>
-					<FileDownload />
+					<FileDownload onClick={handleSubmission} />
 					{/* <button onClick={handleSubmission}>Generate Cheat Sheet</button> */}
 				</div>
 			</div>
