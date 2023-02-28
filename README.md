@@ -7,7 +7,7 @@
 
 ## Motivation
 
-Master Sheet is a HackIllinois Hackathon project created by [Ryan Forester](https://github.com/ryanfore5), [Vidit Gautam](https://github.com/kickthevidit), [Christopher Wang](https://github.com/christopherw1) and [Luke Zhang](https://github.com/lukezhang57).
+Master Sheet is a website created by [Ryan Forester](https://github.com/ryanfore5), [Vidit Gautam](https://github.com/kickthevidit), [Christopher Wang](https://github.com/christopherw1) and [Luke Zhang](https://github.com/lukezhang57) for Hackillinois 2023.
 
 Many students find themselves without enough time to sift through hundreds of textbook pages when learning something. What would greatly help them is having a way of learning faster and more efficiently by reading condensed notes that cover the main ideas of a reading. We seek to resolve this with MasterSheet.
 
